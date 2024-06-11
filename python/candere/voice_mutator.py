@@ -33,6 +33,7 @@ class voice_mutator:
         shifted_data = np.roll(data, int(rate * semitones / 12))
         wavfile.write('shifted_' + filename, rate, shifted_data)
 
-    if __name__ == "__main__":
-        record_audio('original.wav')
-        pitch_shift('original.wav', semitones=2)
+if __name__ == "__main__":
+    vm = voice_mutator
+    vm.record_audio('original.wav')
+    vm.pitch_shift('original.wav', semitones=2)
